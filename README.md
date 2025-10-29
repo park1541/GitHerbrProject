@@ -66,6 +66,9 @@
 
 ---
 
+## 🗂️ ERD
+여기는 ERD 관계도 사진
+
 ## 🎯 핵심 구현 사항
 
 ### 📸 1. 이미지 업로드 시스템
@@ -141,7 +144,7 @@ console.log('Frontend received:', data);
 ---
 ![날씨-API](https://github.com/user-attachments/assets/169f225c-bddd-4c1d-be40-94db7ce15c78)
 
-## 🗂️ ERD
+
 
 
 ## 📸 스크린샷
