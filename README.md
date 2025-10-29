@@ -6,7 +6,7 @@
 
 식물을 사랑하는 사람들이 모여 정보를 공유하고 소통할 수 있는 커뮤니티 플랫폼입니다.
 게시글 작성, 댓글, 좋아요 기능과 함께 실시간 날씨 정보를 제공하여 식물 관리에 도움을 줍니다.
-또한, 라즈베리파이를 활용하여 스마트팜을 운영하는 사람들이 더욱 쉽게 관리할 수 있도록 
+또한, 라즈베리파이를 활용하여 스마트팜을 운영하는 사람들이 더욱 쉽게 관리할 수 있도록 도움을 줍니다.
 
 ### 개발 기간
 - 2025.09. ~ 2025.11 (3개월)
@@ -88,7 +88,7 @@ String imgUrl = "http://localhost:8080/upload/abc123.jpg";
 
 **2단계: 사용 여부 추적**
 ```java
-@Scheduled(cron = "0 0 3 * * *")  // 매일 새벽 3시
+@Scheduled(cron = "0 0 * * * *")  // 매일 정각
 public void cleanupUnusedImages() {
     // used = 0 인 이미지 삭제
 }
@@ -106,6 +106,7 @@ public void cleanupUnusedImages() {
 ✅ 자동화로 유지보수 부담 감소
 
 ---
+![이미지 자동 정리](https://github.com/user-attachments/assets/ce4d046d-66e7-40f8-8028-fa9fb88158b9)
 
 ### 🌤️ 2. 날씨 API 연동
 
@@ -138,14 +139,14 @@ console.log('Frontend received:', data);
 - 끈기 있는 문제 해결 태도
 
 ---
+![날씨-API](https://github.com/user-attachments/assets/169f225c-bddd-4c1d-be40-94db7ce15c78)
 
 ## 🗂️ ERD
+
 
 ## 📸 스크린샷
 
 (스크린샷 추가 예정)
-
-## 📝 회고
 
 ### 잘한 점
 - 확장 가능한 아키텍처 설계 (URL 기반 이미지 관리)
@@ -163,9 +164,6 @@ console.log('Frontend received:', data);
 - 풀스택 개발을 통한 전체 흐름 이해
 
 ---
-
-## 📖 프로젝트 소개
-
 
 ## ✨ 주요 기능
 
