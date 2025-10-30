@@ -1,4 +1,4 @@
-# 🌱 Plant Community Platform
+![날씨-API-_online-video-cutter com_](https://github.com/user-attachments/assets/c5d08491-2d15-46d0-9399-63a302dd7e84)# 🌱 Plant Community Platform
 
 > 식물 애호가들을 위한 커뮤니티 및 관리 플랫폼
 
@@ -285,8 +285,7 @@ private String extractCity(String address) {
 - 예외 처리와 폴백 로직의 중요성
 
 ---
-
-![날씨 API](https://github.com/user-attachments/assets/169f225c-bddd-4c1d-be40-94db7ce15c78)
+![날씨-API-_online-video-cutter com_](https://github.com/user-attachments/assets/c48ac4e3-23cf-4cdb-8117-e7a984e81fa0)
 
 ---
 
