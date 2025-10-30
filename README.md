@@ -238,54 +238,49 @@ console.log('Frontend received:', data);
      ✅              ✅              ❌              ❌              ❌
 ```
 - 각 단계마다 로그 출력하여 문제 지점 발견
-- 백엔드와 프론트엔드 간 데이터 구조 불일치 확인
+- 카카오 API는 응답하지만 주소 검색 결과가 없는 상황 확인
 
-**3단계: 다단계 폴백 로직 구현**
+**3단계: 근본 원인 파악**
+- **주소 형식 불일치 문제 발견**
+- 예시: "울산광역시" 검색 → 결과 없음, "울산" 검색 → 결과 있음
+
+**4단계: 다단계 폴백 로직 구현**
 ```java
 public WeatherResponse getWeather(String address) {
     try {
-        // 1차 시도: 전체 주소 검색
+        // 1차 시도: 전체 주소 검색 ("울산광역시 남구")
         return searchByFullAddress(address);
     } catch (Exception e) {
         try {
-            // 2차 시도: 간략 주소 검색
-            return searchBySimpleAddress(address);
+            // 2차 시도: 간략 주소 검색 ("울산")
+            return searchBySimpleAddress(extractCity(address));
         } catch (Exception e2) {
             try {
                 // 3차 시도: 키워드 검색
                 return searchByKeyword(address);
             } catch (Exception e3) {
-                // 4차 시도: 기본 좌표 반환
+                // 4차 시도: 기본 좌표 반환 (서울)
                 return getDefaultWeather();
             }
         }
     }
 }
-```
 
-**4단계: 데이터 매핑 수정**
-```java
-// Before: 필드명 불일치
-return WeatherResponse.builder()
-    .temp(data.get("temperature"))  // null 반환
-    .build();
-
-// After: 올바른 필드명 매핑
-return WeatherResponse.builder()
-    .temp(data.get("temp"))  // 정상 반환
-    .humidity(data.get("humidity"))
-    .weather(data.get("weather"))
-    .build();
+// 주소에서 도시명만 추출
+private String extractCity(String address) {
+    // "울산광역시 남구" → "울산"
+    return address.split(" ")[0].replace("광역시", "");
+}
 ```
 
 #### 성과
 ✅ 주소 형식 불일치 문제 해결  
-✅ 안정적인 서비스 제공 (폴백 로직)  
-✅ 사용자 경험 개선 (항상 날씨 정보 표시)
+✅ 4단계 폴백으로 안정적인 서비스 제공  
+✅ 사용자가 어떤 형식으로 입력해도 날씨 정보 제공
 
 #### 배운 점
 - 외부 API 연동 시 양방향 디버깅의 중요성
-- 데이터 흐름 전체를 이해하는 풀스택 관점
+- 데이터 흐름 전체를 추적하는 풀스택 관점
 - 끈기 있는 문제 해결 태도
 - 예외 처리와 폴백 로직의 중요성
 
@@ -310,8 +305,8 @@ return WeatherResponse.builder()
 
 ## 🔗 관련 링크
 
-- **Frontend Repository**: [GitHub 링크](여기에-프론트엔드-레포-링크)
-- **Backend Repository**: [GitHub 링크](여기에-백엔드-레포-링크)
+- **Frontend Repository**: https://github.com/park1541/frontend_plant_comunity.git
+- **Backend Repository**: https://github.com/park1541/backend_plant_comunity.git
 ---
 
 <div align="center">
