@@ -96,58 +96,31 @@
 
 ## 🎯 핵심 구현 사항
 
-### 📝 1. Quill Editor Library
+### 📝 1. Quill Editor Library 도입
 
 #### 문제 상황
-ContentEditable을 사용하여 Editor를 직접 구현했지만, 기능을 추가할수록 코드가 복잡해지고 유지보수가 어려운 문제 발생
+ContentEditable을 사용하여 에디터를 직접 구현했지만, 기능을 추가할수록 코드가 복잡해져 유지보수가 어려워지는 문제 발생.
 
 #### 해결 방법
 
-**Quill Editor Library 설치**
-```bash
-npm install react-quill
-```
+**라이브러리 도입으로 안정성 확보**
+- 검증된 오픈소스 라이브러리 Quill Editor를 도입
 
-**기존 ContentEditable 대체**
-```jsx
-// Before: ContentEditable 직접 구현
+**기존 커스텀 코드를 라이브러리로 단순화**
+- ContentEditable 직접 구현 제거
+- 선언형 React 컴포넌트로 교체하여 코드 가독성 향상
+- 상태 관리를 React state와 통합
 
-  {/* 복잡한 커스텀 로직... */}
-
-
-// After: Quill Editor 사용
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-
-<ReactQuill 
-  theme="snow" 
-  value={content} 
-  onChange={setContent}
-  modules={modules}  // 툴바 커스터마이징
-/>
-```
-
-**이미지 업로드 핸들러 통합**
-```javascript
-const modules = {
-  toolbar: {
-    container: [
-      ['bold', 'italic', 'underline'],
-      ['image'],
-      // ...
-    ],
-    handlers: {
-      image: imageHandler  // 커스텀 이미지 업로드
-    }
-  }
-};
-```
+**프로젝트 특화 커스터마이징**
+- Quill의 toolbar 커스터마이징으로 필요한 기능만 선택
+- 이미지 업로드 핸들러를 커스텀하여 서버 연동
+- 게시글 작성에 필요한 기능(볼드, 이탤릭, 이미지, 리스트 등)만 제공
 
 #### 성과
-- 유지보수성 대폭 향상  
-- 풍부한 편집 기능 제공
-
----
+- 유지보수성 대폭 향상 (복잡한 브라우저 호환성 처리 제거)
+- 개발 속도 단축 (기능 추가가 간단해짐)
+- 안정적인 텍스트 에디팅 경험 제공
+- 추후 라이브러리 버전 업데이트로 자동 개선
 
 ### 📸 2. 이미지 업로드 시스템
 
