@@ -247,7 +247,16 @@ const modules = {
 ![페이지-네이션](https://github.com/user-attachments/assets/599a6a82-73ca-4735-bcce-90570477b497)
 
 ---
+## 🎥 웹 시연영상
 
+### 게시판 CRUD
+https://github.com/user-attachments/assets/2b5de776-68ba-4fb4-bde6-aa827790db5e
+
+### 좋아요, 덧글/더덧글
+
+https://github.com/user-attachments/assets/a3dd8a85-269c-4f15-bda8-462e57d85b42
+
+---
 ## 🔗 관련 링크
 
 - **Frontend Repository**: https://github.com/park1541/frontend_plant_comunity.git
