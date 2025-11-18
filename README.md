@@ -222,18 +222,34 @@ ContentEditable을 사용하여 에디터를 직접 구현했지만, 기능을 �
 ---
 ## 🎥 웹 시연영상
 
-### 게시판 CRUD
-https://github.com/user-attachments/assets/2b5de776-68ba-4fb4-bde6-aa827790db5e
+### 회원가입 영상
+### 아이디, 비밀번호 찾기 영상
+### 좋아요 누르고, 덧글 등록하는 영상
+### Quill editor 게시글 등록하는 영상
+### 캘린더 일정 관리하는 영상
+### 농장주가 로그인했을시 식물정보, 장치가동 로그, 현재 이식물을 키우기 적합한지 확인하는 영상
+### 환경데이터 일간, 주간, 월간으로 차트로 확인하는 영상
+### 쪽지보내기, 받기, 받았을때 알림등 쪽지 영상
+### 관리자가 문의 처리하는 영상
 
-### 좋아요, 덧글/더덧글
-
-https://github.com/user-attachments/assets/a3dd8a85-269c-4f15-bda8-462e57d85b42
-
+### 덧글 애뮬레이터에 알림 기능을 지원하지않아 덧글을 등록할때 알림이가는것을 웹으로 구현
+---
+## 🎥 웹 시연영상
+### 권한별 메뉴 조건부 탭표시 영상
+### Pell rich editor 게시글 등록하는 영상
+### 제목, 제목 + 내용, 작성자 별로 검색하는 영상
+### 좋아요누르고, 덧글등록하는 영상
+### 센서 데이터 수동 자동모드 전환하는 영상
+### 라즈베리파이 기기 제어하는 영상
+### 실시간 채팅하는 영상
+### 농사 일정관리를 캘린더로 하는 영상 
+### 프로필 사진 등록,수정하는 영상
 ---
 ## 🔗 관련 링크
 
 - **Frontend Repository**: https://github.com/park1541/frontend_plant_comunity.git
 - **Backend Repository**: https://github.com/park1541/backend_plant_comunity.git
+- **App Repository** : https://github.com/park1541/app_plant_community.git
 ---
 
 <div align="center">
